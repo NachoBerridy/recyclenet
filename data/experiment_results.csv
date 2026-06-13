@@ -1,0 +1,7 @@
+Experiment,Architecture,Segmentation,Best Val Acc %,Test Acc %,Test Loss,Train Time (s)
+resnet50__no_seg,resnet50,No,95.04,95.46,0.1508,2270
+efficientnet_b0__no_seg,efficientnet_b0,No,91.19,91.11,0.2646,1785
+resnet18__no_seg,resnet18,No,88.63,88.18,0.3339,1595
+resnet50__segmented,resnet50,Yes,84.44,82.38,0.5114,1603
+efficientnet_b0__segmented,efficientnet_b0,Yes,80.17,80.47,0.599,1245
+resnet18__segmented,resnet18,Yes,79.75,78.49,0.6059,1129
