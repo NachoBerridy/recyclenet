@@ -19,7 +19,7 @@ from utils import CLASS_EMOJIS, CLASS_NAMES, get_device, load_model, predict
 
 st.set_page_config(page_title="RecycleNet ♻️", page_icon="♻️", layout="wide")
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "modelo.pth")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pth")
 ALL_CLASSES = CLASS_NAMES
 
 CLASS_LABELS = {
@@ -29,7 +29,6 @@ CLASS_LABELS = {
         "Cardboard": "Cartón",
         "Plastic": "Plástico",
         "Metal": "Metal",
-        "Trash": "Basura",
         "Battery": "Pila",
         "Biological": "Orgánico",
         "Textile": "Textil",
@@ -40,7 +39,6 @@ CLASS_LABELS = {
         "Cardboard": "Cardboard",
         "Plastic": "Plastic",
         "Metal": "Metal",
-        "Trash": "Trash",
         "Battery": "Battery",
         "Biological": "Biological",
         "Textile": "Textile",
@@ -51,7 +49,6 @@ CLASS_LABELS = {
         "Cardboard": "Papelão",
         "Plastic": "Plástico",
         "Metal": "Metal",
-        "Trash": "Lixo",
         "Battery": "Pilha",
         "Biological": "Orgânico",
         "Textile": "Têxtil",
@@ -99,14 +96,14 @@ CLASS_META = {
             "pt": "Latas de alumínio e aço. Achate as latas para economizar espaço e facilitar o transporte.",
         },
     },
-    "Trash": {
-        "icon": "🗑️",
-        "tip": {
-            "es": "Residuo no reciclable. Intentá reducirlo comprando productos con menos packaging.",
-            "en": "Non-recyclable waste. Try to reduce it by buying products with less packaging.",
-            "pt": "Resíduo não reciclável. Tente reduzi-lo comprando produtos com menos embalagem.",
-        },
-    },
+    # "Trash": {
+    #     "icon": "🗑️",
+    #     "tip": {
+    #         "es": "Residuo no reciclable. Intentá reducirlo comprando productos con menos packaging.",
+    #         "en": "Non-recyclable waste. Try to reduce it by buying products with less packaging.",
+    #         "pt": "Resíduo não reciclável. Tente reduzi-lo comprando produtos com menos embalagem.",
+    #     },
+    # },
     "Battery": {
         "icon": "🔋",
         "tip": {
@@ -149,7 +146,7 @@ TRANSLATIONS = {
         "upload_label": "Seleccioná una imagen (JPG, PNG, WEBP)",
         "cam_label": "O tomá una foto con la cámara",
         "loading": "Analizando imagen...",
-        "no_model": "⚠️ No se encontró modelo.pth en prod/. Copiá el modelo entrenado para activar predicciones.",
+        "no_model": "⚠️ No se encontró model.pth en prod/. Copiá el modelo entrenado para activar predicciones.",
         "result_label": "Clase detectada",
         "result_conf": "Confianza",
         "result_dist": "Distribución de clases",
@@ -205,7 +202,7 @@ TRANSLATIONS = {
         "upload_label": "Select an image (JPG, PNG, WEBP)",
         "cam_label": "Or take a photo with the camera",
         "loading": "Analyzing image...",
-        "no_model": "⚠️ modelo.pth was not found in prod/. Copy the trained model to enable predictions.",
+        "no_model": "⚠️ model.pth was not found in prod/. Copy the trained model to enable predictions.",
         "result_label": "Detected class",
         "result_conf": "Confidence",
         "result_dist": "Class distribution",
@@ -261,7 +258,7 @@ TRANSLATIONS = {
         "upload_label": "Selecione uma imagem (JPG, PNG, WEBP)",
         "cam_label": "Ou tire uma foto com a câmera",
         "loading": "Analisando imagem...",
-        "no_model": "⚠️ modelo.pth não foi encontrado em prod/. Copie o modelo treinado para ativar as previsões.",
+        "no_model": "⚠️ model.pth não foi encontrado em prod/. Copie o modelo treinado para ativar as previsões.",
         "result_label": "Classe detectada",
         "result_conf": "Confiança",
         "result_dist": "Distribuição de classes",

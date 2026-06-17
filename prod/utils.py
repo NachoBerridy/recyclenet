@@ -17,7 +17,6 @@ CLASS_NAMES = [
     "Cardboard",
     "Plastic",
     "Metal",
-    "Trash",
     "Battery",
     "Biological",
     "Textile",
@@ -32,7 +31,6 @@ CLASS_EMOJIS = {
     "Cardboard":  "📦",
     "Plastic":    "🧴",
     "Metal":      "🥫",
-    "Trash":      "🗑️",
     "Battery":    "🔋",
     "Biological": "🍂",
     "Textile":    "👕",
@@ -41,14 +39,18 @@ CLASS_EMOJIS = {
 # Preprocesamiento IDÉNTICO al usado en validación/test durante el entrenamiento.
 # ResNet50 fue entrenado con ImageNet: media y desvío de ImageNet.
 INFERENCE_TRANSFORM = transforms.Compose([
-    transforms.Resize(256),
-    transforms.CenterCrop(224),
+    transforms.Resize((224, 224)),
     transforms.ToTensor(),
     transforms.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225],
     ),
+    
 ])
+
+
+
+
 
 
 # ── Carga del modelo ────────────────────────────────────────────────────────
@@ -72,8 +74,25 @@ def load_model(model_path: str, device: torch.device) -> nn.Module:
     in_features = model.fc.in_features
     model.fc = nn.Linear(in_features, NUM_CLASSES)
 
-    # Cargar pesos
-    state_dict = torch.load(model_path, map_location=device)
+    # Cargar pesos desde un estado crudo o desde un checkpoint con metadatos.
+    checkpoint = torch.load(model_path, map_location=device)
+    if isinstance(checkpoint, dict):
+        state_dict = (
+            checkpoint.get("model_state_dict")
+            or checkpoint.get("state_dict")
+            or checkpoint.get("model")
+            or checkpoint
+        )
+    else:
+        state_dict = checkpoint
+
+    # Algunos entrenamientos guardan el modelo bajo DataParallel/DDP.
+    if isinstance(state_dict, dict) and any(key.startswith("module.") for key in state_dict):
+        state_dict = {
+            key.removeprefix("module."): value
+            for key, value in state_dict.items()
+        }
+
     model.load_state_dict(state_dict)
 
     model.to(device)
