@@ -9,12 +9,13 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.45-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-CV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)](https://opencv.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Read_the_story-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/posts/carlosgitto_recyclenet-transfer-learning-for-waste-classification-ugcPost-7477751611960979456-i_dr/)
 
 **95.5% accuracy · 8 classes · 26,219 images · transfer learning + deployable app**
 
 [![Open the app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://recyclenet-utn.streamlit.app/)
 
-[🚀 Try the live demo](https://recyclenet-utn.streamlit.app/) · [📓 Notebooks](dev/)
+[🚀 Try the live demo](https://recyclenet-utn.streamlit.app/) · [📝 LinkedIn write-up](https://www.linkedin.com/posts/carlosgitto_recyclenet-transfer-learning-for-waste-classification-ugcPost-7477751611960979456-i_dr/) · [📓 Notebooks](dev/)
 
 </div>
 
