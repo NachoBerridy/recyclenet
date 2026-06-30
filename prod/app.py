@@ -96,14 +96,6 @@ CLASS_META = {
             "pt": "Latas de alumínio e aço. Achate as latas para economizar espaço e facilitar o transporte.",
         },
     },
-    # "Trash": {
-    #     "icon": "🗑️",
-    #     "tip": {
-    #         "es": "Residuo no reciclable. Intentá reducirlo comprando productos con menos packaging.",
-    #         "en": "Non-recyclable waste. Try to reduce it by buying products with less packaging.",
-    #         "pt": "Resíduo não reciclável. Tente reduzi-lo comprando produtos com menos embalagem.",
-    #     },
-    # },
     "Battery": {
         "icon": "🔋",
         "tip": {
@@ -982,32 +974,6 @@ def render_nav() -> None:
                     st.rerun()
 
 
-def render_team_cardss() -> None:
-    team = [
-        ("Antonella Aldao", "AA", "https://www.linkedin.com/in/antonellaaldao/"),
-        ("Ignacio Berridy", "IB", "https://www.linkedin.com/in/ignacioberridy/"),
-        ("Carlos Gitto", "CG", "https://www.linkedin.com/in/carlosgitto/"),
-        ("Diandra Malca", "DM", "https://www.linkedin.com/in/diandra-malca-8099791b3/"),
-        ("Ignacio Ramos", "IR", "https://www.linkedin.com/in/ignacio-ramos-developer/"),
-    ]
-
-    cols = st.columns(len(team), gap="small")
-    for col, (name, initials, url) in zip(cols, team):
-        with col:
-            st.markdown(
-                f"""
-                <div class='rn-team-card'>
-                  <div class='rn-avatar'>{initials}</div>
-                  <h4>{name}</h4>
-                  <p>{t('team_badge')}</p>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-            st.markdown(f"[LinkedIn ↗]({url})")
-
-
-
 def render_team_cards() -> None:
     # filename: expected photo in assets/team/ (jpg or png, see TEAM_PHOTOS_DIR)
     team = [
@@ -1112,57 +1078,6 @@ def render_classify_page() -> None:
     )
 
     left, right = st.columns([1.65, 0.85], gap="large", vertical_alignment="top")
-
-    # with right:
-    #     st.markdown(
-    #         f"""
-    #         <div class='rn-side'>
-    #           <div class='rn-side-title'>{t('config_hint_title')}</div>
-    #           <p>{t('config_hint_body')}</p>
-    #           <div class='rn-callout'>
-    #             <strong>{t('config_hint_title')}</strong>
-    #             <span>{t('config_hint_ready') if st.session_state.groups else t('config_hint_empty')}</span>
-    #           </div>
-    #         </div>
-    #         """,
-    #         unsafe_allow_html=True,
-    #     )
-    #     st.button(t("btn_config"), use_container_width=True, key="open_config_side", on_click=go, args=("config", False))
-
-    #     if st.session_state.groups:
-    #         st.caption(f"{len(st.session_state.groups)} grupo(s) activos · {len(grouped_classes())} clase(s) agrupadas")
-    #         st.markdown(
-    #             "<div class='rn-chip-row'>"
-    #             + "".join(
-    #                 f"<span class='rn-chip'>{group['name'] or t('group_name')}</span>"
-    #                 for group in st.session_state.groups
-    #             )
-    #             + "</div>",
-    #             unsafe_allow_html=True,
-    #         )
-
-    # with right:
-    #     st.markdown(
-    #         f"""
-    #         <div class='rn-side'>
-    #         <div class='rn-side-title'>{t('config_hint_title')}</div>
-    #         <p>{t('config_hint_body')}</p>
-    #         <div class='rn-callout'>
-    #             <strong>{t('config_hint_title')}</strong>
-    #             <span>{t('config_hint_ready') if st.session_state.groups else t('config_hint_empty')}</span>
-    #         </div>
-    #         </div>
-    #         """,
-    #         unsafe_allow_html=True,
-    #     )
-
-    #     st.button(
-    #     t("btn_config"),
-    #     use_container_width=True,
-    #     key="open_config_side",
-    #     on_click=go,
-    #     args=("config", False),
-    # )
 
     with right:
         st.markdown(
