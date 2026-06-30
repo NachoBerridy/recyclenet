@@ -1,27 +1,32 @@
-# Dataset
+# ── Datasets ───────────────────────────────────────────────
 data/raw/
 data/processed/
 
-# Images
+# ── Docs ───────────────────────────────────────────────
+docs/
+*.png
 *.jpg
 *.jpeg
-*.png
 *.bmp
 *.gif
 *.tiff
+!assets/
+!assets/**
 
-# Python
+# ── Python ─────────────────────────────────────────────────
 __pycache__/
 *.pyc
 
-# Jupyter
+# ── Jupyter ────────────────────────────────────────────────
 .ipynb_checkpoints/
 
-# Virtual environments
+# ── Env ─────────────────────────────────────
 venv/
-.env
 .venv/
+.env
 
-# OS
+# ── OS ────────────────────────────────────────────
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
