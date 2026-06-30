@@ -11,8 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Read_the_story-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/posts/carlosgitto_recyclenet-transfer-learning-for-waste-classification-ugcPost-7477751611960979456-i_dr/)
 
-**95.5% accuracy · 8 classes · 26,219 images · transfer learning + deployable app**
-
+**Up to 95% accuracy · 8 classes · 26,219 images · transfer learning + live app**
 [![Open the app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://recyclenet-utn.streamlit.app/)
 
 [🚀 Try the live demo](https://recyclenet-utn.streamlit.app/) · [📝 LinkedIn write-up](https://www.linkedin.com/posts/carlosgitto_recyclenet-transfer-learning-for-waste-classification-ugcPost-7477751611960979456-i_dr/) · [📓 Notebooks](dev/)
@@ -31,9 +30,10 @@
 
 - **8 waste classes:** glass, paper, cardboard, plastic, metal, battery, biological and textile.
 - **Custom unified dataset** built from 2 public Kaggle datasets → **26,219 images**.
-- **6-experiment benchmark** (3 architectures × 2 preprocessing variants) via *transfer learning*.
+- **6-experiment benchmark** (3 architectures × 2 preprocessing variants) via **transfer learning**.
 - **Counterintuitive finding:** segmenting the object from its background **hurt** the model across every architecture.
-- **Best model:** ResNet-50 — **95.46% test accuracy** (winning experiment).
+- **Best experiment:** ResNet-50 (no segmentation) — **95.46% test accuracy** (10-epoch benchmark).
+- **Deployed model:** ResNet-50 retrained for 20 epochs — **91.04% accuracy · 0.90 macro-F1** (powers the live demo).
 - **Final product:** interactive web app built with **Streamlit**, multilingual (ES / EN / PT).
 
 ---
@@ -86,9 +86,10 @@ End-to-end pipeline, from raw data to a deployed model:
 </tr>
 </table>
 
-**Final model.** The winning configuration (ResNet-50, no segmentation) was retrained for 20 epochs and
-serialized as the `prod/model.pth` checkpoint for inference. Model selection is based on **best validation
-accuracy** (not the last epoch) and reported with accuracy + per-class F1 + confusion matrix.
+
+**Final model.** The winning configuration (ResNet-50, no segmentation) It reaches 91.04% accuracy and 0.90 macro-F1 on the test set — this is the model 
+behind the live demo and the confusion matrix above. Model selection is based on best validation accuracy (not the last epoch) and reported with 
+accuracy + per-class F1 + confusion matrix.
 
 ---
 
