@@ -4,9 +4,9 @@
 
 ### Urban waste classification with Deep Learning and Computer Vision
 
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.3-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.45-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.9-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.67-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-CV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)](https://opencv.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Read_the_story-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/posts/carlosgitto_recyclenet-transfer-learning-for-waste-classification-ugcPost-7477751611960979456-i_dr/)
@@ -117,8 +117,8 @@ streamlit run app.py
 git clone https://github.com/NachoBerridy/recyclenet.git
 cd recyclenet
 
-# 2 · Environment + dependencies (Python 3.12 required by PyTorch 2.3.1)
-python3.12 scripts/setup_environment.py  # Windows: py -3.12 scripts/setup_environment.py
+# 2 · Environment + dependencies (Python 3.12–3.14)
+python3 scripts/setup_environment.py  # Windows: py -3 scripts/setup_environment.py
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 
 # 3 · Download the Kaggle datasets
