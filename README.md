@@ -117,8 +117,8 @@ streamlit run app.py
 git clone https://github.com/NachoBerridy/recyclenet.git
 cd recyclenet
 
-# 2 · Environment + dependencies
-python scripts/setup_environment.py
+# 2 · Environment + dependencies (Python 3.12 required by PyTorch 2.3.1)
+python3.12 scripts/setup_environment.py  # Windows: py -3.12 scripts/setup_environment.py
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 
 # 3 · Download the Kaggle datasets
